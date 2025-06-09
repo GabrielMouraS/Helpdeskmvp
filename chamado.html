@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir Novo Chamado</title>
+    <meta name="description" content="Abra um novo chamado de suporte técnico na Já Resolve. Descreva seu problema e receba ajuda especializada.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/chamado.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__brand">
+                <i class="fas fa-laptop-code header__logo-icon"></i>
+                <span class="header__logo-text">Já Resolve</span>
+            </div>
+            <div class="header__user">
+                <div class="header__user-info">
+                    <i class="fas fa-user-circle header__user-icon"></i>
+                    <span class="header__user-name">User</span>
+                </div>
+                <a href="index.html" class="header__back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">
+                    <i class="fas fa-headset page-title-icon"></i>
+                    Abrir Novo Chamado
+                </h1>
+                <p class="page-subtitle">
+                    Preencha as informações abaixo para solicitar suporte técnico. 
+                    Nossa equipe entrará em contato em breve para resolver seu problema.
+                </p>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="chamado-form" class="chamado-form" novalidate>
+                    <!-- Categoria do Problema -->
+                    <div class="form-group">
+                        <label for="categoria" class="form-label">
+                            <i class="fas fa-list form-label-icon"></i>
+                            Qual é o seu problema?
+                            <span class="required">*</span>
+                        </label>
+                        <select id="categoria" name="categoria" class="form-select" required>
+                            <option value="">Selecione o tipo do problema</option>
+                            <option value="computador-lento">Meu computador está lento</option>
+                            <option value="sem-internet">Não consigo acessar um programa</option>
+                            <option value="tela-estranha">Tem algo estranho aparecendo na tela</option>
+                            <option value="programa-nao-abre">Não consigo abrir um programa (ex: Word, navegador)</option>
+                            <option value="instalar-programa">Quero ajuda para instalar um programa</option>
+                            <option value="email-problema">Meu e-mail não está funcionando</option>
+                            <option value="outro">Outro problema</option>
+                        </select>
+                        <div class="form-error" id="categoria-error"></div>
+                    </div>
+
+                    <!-- Descrição do Problema -->
+                    <div class="form-group">
+                        <label for="descricao" class="form-label">
+                            <i class="fas fa-comment-dots form-label-icon"></i>
+                            Descreva seu problema com detalhes
+                            <span class="required">*</span>
+                        </label>
+                        <textarea 
+                            id="descricao" 
+                            name="descricao" 
+                            class="form-textarea" 
+                            placeholder="Conte-nos o que está acontecendo. Quanto mais detalhes você fornecer, melhor poderemos ajudá-lo. Por exemplo: quando o problema começou, o que você estava fazendo, mensagens de erro que apareceram, etc."
+                            rows="6"
+                            required
+                        ></textarea>
+                        <div class="form-counter">
+                            <span id="char-count">0</span> / 1000 caracteres
+                        </div>
+                        <div class="form-error" id="descricao-error"></div>
+                    </div>
+
+                    <!-- Upload de Imagem -->
+                    <div class="form-group">
+                        <label for="imagem" class="form-label">
+                            <i class="fas fa-camera form-label-icon"></i>
+                            Enviar foto do problema (opcional)
+                        </label>
+                        <div class="file-upload-container">
+                            <input 
+                                type="file" 
+                                id="imagem" 
+                                name="imagem" 
+                                class="file-input" 
+                                accept="image/jpeg,image/jpg,image/png"
+                            >
+                            <label for="imagem" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                                <span class="file-upload-text">
+                                    Clique aqui para selecionar uma imagem
+                                </span>
+                                <span class="file-upload-info">
+                                    JPG ou PNG, até 5MB
+                                </span>
+                            </label>
+                            <div class="file-preview" id="file-preview"></div>
+                        </div>
+                        <div class="form-error" id="imagem-error"></div>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="limpar-form">
+                            <i class="fas fa-eraser"></i>
+                            Limpar Formulário
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="enviar-chamado">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Chamado
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div class="info-section">
+                <div class="info-card">
+                    <i class="fas fa-clock info-icon"></i>
+                    <h3 class="info-title">Tempo de Resposta</h3>
+                    <p class="info-text">Respondemos com agilidade durante o horário comercial para melhor atendê-lo.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shield-alt info-icon"></i>
+                    <h3 class="info-title">Segurança</h3>
+                    <p class="info-text">Suas informações são protegidas e tratadas com total confidencialidade.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-headphones info-icon"></i>
+                    <h3 class="info-title">Suporte</h3>
+                    <p class="info-text">Estamos disponíveis todos os dias para resolver seus problemas.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>TechConnect</span>
+                    </div>
+                    <p class="footer__description">
+                        Conectando pessoas a soluções tecnológicas de forma rápida e confiável.
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h4 class="footer__title">Suporte</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Central de Ajuda</a></li>
+                            <li><a href="#" class="footer__link">Como Funciona</a></li>
+                            <li><a href="#" class="footer__link">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__group">
+                        <h4 class="footer__title">Empresa</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Sobre nós</a></li>
+                            <li><a href="#" class="footer__link">Termos de Uso</a></li>
+                            <li><a href="#" class="footer__link">Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 TechConnect. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle modal-icon success"></i>
+                <h2 class="modal-title">Chamado Enviado com Sucesso!</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">
+                    Seu chamado foi registrado e nossa equipe entrará em contato em breve.
+                </p>
+                <div class="modal-info">
+                    <strong>Número do chamado:</strong> <span id="numero-chamado"></span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="fechar-modal">
+                    <i class="fas fa-check"></i>
+                    Entendi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay do Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/chamado.js"></script>
+</body>
+</html>
+

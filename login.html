@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Já Resolve</title>
+    <meta name="description" content="Acesse sua conta para solicitar suporte técnico.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="assets/css/login.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <i class="fas fa-laptop-code nav__logo-icon"></i>
+                <a href="index.html" class="nav__logo-text" style="text-decoration: none; color: inherit;">Já resolve</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <!--
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html#home" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#benefits" class="nav__link">Benefícios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#how-it-works" class="nav__link">Como Funciona</a>
+                    </li>
+                </ul>
+                -->
+            </div>
+            <div class="nav__actions">
+                <a href="login.html" class="nav__login">Entrar</a>
+                <a href="cadastro.html" class="btn btn--primary btn--small">Cadastrar</a>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    
+    <main class="main">
+       <section class="login-section">
+           <div class="container">
+               <div class="login-card">
+                   <div class="login-card__header">
+                       <h2 class="section__title">Acesse sua Conta</h2>
+                       <p class="section__description">Bem-vindo de volta! Faça login para continuar.</p>
+                   </div>
+                   
+                   <form class="login-form">
+                       <div class="form-group">
+                           <label for="email">E-mail</label>
+                           <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                       </div>
+                       
+                       <div class="form-group">
+                           <label for="password">Senha</label>
+                           <input type="password" id="password" name="password" placeholder="••••••••" required>
+                       </div>
+
+                       <div class="form-options">
+                           <div class="form-check">
+                               <input type="checkbox" id="remember-me">
+                               <label for="remember-me">Lembrar-me</label>
+                           </div>
+                           <a href="#" class="form-forgot-link">Esqueceu a senha?</a>
+                       </div>
+                       
+                       <div class="form-actions">
+                           <button type="submit" class="btn btn--primary btn--large">Entrar</button>
+                       </div>
+                   </form>
+
+                   <div class="login-card__footer">
+                       <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se agora</a></p>
+                   </div>
+               </div>
+           </div>
+       </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Já Resolve</span>
+                    </div>
+                    <p class="footer__description">
+                        Conectando pessoas a soluções tecnológicas de forma rápida e confiável.
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h4 class="footer__title">Empresa</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Sobre nós</a></li>
+                            <li><a href="#" class="footer__link">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__group">
+                        <h4 class="footer__title">Suporte</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">Central de Ajuda</a></li>
+                            <li><a href="#" class="footer__link">Termos de Uso</a></li>
+                            <li><a href="#" class="footer__link">Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2025 Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
